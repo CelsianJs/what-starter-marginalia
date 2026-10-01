@@ -12,7 +12,7 @@ The important boundary: static article HTML stays useful without JavaScript. `mo
 | Static renderer | `src/server/render.mjs` | Uses `h()` plus `renderToString()` for route HTML, article pages and the embedded article index. |
 | Client islands | `src/client/main.jsx` | Mounts search, bookmarks and reading-progress behavior. |
 | Styling | `src/shared/site.css` | Broadsheet visual system with no remote fonts. |
-| Build checks | `scripts/check.mjs` | Verifies route files, manifest, static 404 and generated assets. |
+| Build checks | `scripts/check.mjs` | Verifies route files, static 404, generated assets and canonical Vura manifest shape. |
 
 ## Data flow
 
@@ -144,6 +144,14 @@ function safeStorageSet(key, value, storageStatus) {
 ```
 
 Takeaway: local-first features still need a failure mode users can understand.
+
+### Let Vura synthesize the static manifest
+
+Problem: a partial handwritten `dist/manifest.json` caused Vura upload validation to fail because it omitted platform-required fields such as `timestamp` and `pages[].filePath`.
+
+Fix: Marginalia now writes the full static manifest contract, including `timestamp`, `layouts`, `pages[].filePath`, `hasLoader`, `hasGetServerData` and `config.staticKey`. The build check validates the emitted manifest with `@celsian/vura-contract`, the same public contract package used by the platform.
+
+Takeaway: CLI uploads that keep files under `dist/static` should emit the complete route-manifest contract so public URLs map to promoted static keys.
 
 ## What went smoothly
 

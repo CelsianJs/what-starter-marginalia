@@ -29,7 +29,7 @@ npm run preview
 The Vura-ready artifact is written to `dist/`:
 
 - `dist/static/**` — article pages, category pages and assets
-- `dist/manifest.json` — static route manifest
+- `dist/manifest.json` — canonical Vura route manifest validated by the public contract package
 - `vura.json` — cache headers and redirect rules sent by `vura-platform deploy`
 
 ## Routes

@@ -118,6 +118,7 @@ function Build() {
         h('li', {}, 'Computed: search results and bookmark lists derive from article data.'),
         h('li', {}, 'Effects: localStorage persists bookmarks; a scroll listener updates reading progress.'),
         h('li', {}, 'Routing: each article becomes `/articles/:slug/index.html` during `scripts/build.mjs`.'),
+        h('li', {}, 'Vura: `scripts/build.mjs` writes a canonical `dist/manifest.json` with `timestamp`, `filePath` and `config.staticKey` for each static page.'),
         h('li', {}, 'Source: planned public repo `https://github.com/CelsianJs/what-starter-marginalia`.'),
         h('li', {}, 'Lesson: server-rendered article pages use `h()` and `renderToString`; browser JSX stays in `src/client/main.jsx` so compiler-lowered DOM code is never imported by the Node renderer.'),
         h('li', {}, 'Lesson: search and bookmark islands use `mount()`, replacing fallback containers after JavaScript loads rather than preserving SSR nodes through hydration.'),

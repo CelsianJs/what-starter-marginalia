@@ -41,7 +41,7 @@
 
 ## Components
 - Existing components to reuse: What `h` server rendering; What client `useSignal`, `useComputed`, `useEffect`.
-- New/changed components: issue rail, article list, article page, search island, bookmark button/list, reading-progress bar.
+- New/changed components: issue rail, article list, article page, server-rendered sidenotes, search island, bookmark button/list, reading-progress bar.
 - Variants and states: bookmarked/unbookmarked, empty reading list, query results, active categories.
 - Token/component ownership: CSS variables in `src/shared/site.css`; editorial data in `src/content/articles.mjs`.
 
@@ -79,3 +79,8 @@
 
 ## Open questions
 - [ ] Publishing owner will confirm final public Vura URL after deployment.
+
+## Refinement notes — 2026-10-02 Opus review
+- Increased masthead/nav clearance so the large wordmark descender no longer crowds the primary nav.
+- Added article-content sidenotes rendered on the server, strengthening the product’s actual marginalia concept without requiring JavaScript.
+- Marked the featured essay as Current in Recent pieces and introduced a distinct article lede scale.

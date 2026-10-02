@@ -28,6 +28,11 @@ export const articles = [
       'Marginalia treats the page as a record of attention. Progress, saved pieces and search are kept local, because the reader should not need an account to think in public.',
       'The pattern is simple: render the whole article first, then mount the small client behaviors that make reading easier.'
     ],
+    notes: [
+      { label: 'mark 01', text: 'The margin is product UI here: a visible seam that explains the editorial stance.' },
+      { label: 'state', text: 'Progress and bookmarks remain local browser state, not engagement telemetry.' },
+      { label: 'boundary', text: 'The complete article renders before the reading tools mount.' },
+    ],
   },
   {
     slug: 'the-static-system-is-a-system',
@@ -41,6 +46,10 @@ export const articles = [
       'A static page is not the absence of application architecture. It is an architecture that resolves earlier.',
       'The route graph, article corpus and navigation all exist at build time. The browser receives the finished argument, plus a small script for local decisions.',
       'This lets distribution be extremely boring in the best way: files, headers and a route manifest.'
+    ],
+    notes: [
+      { label: 'resolved', text: 'The server build decides the route graph before a visitor asks for a page.' },
+      { label: 'local', text: 'Small client decisions can exist without moving the essay into an app shell.' },
     ],
   },
   {
@@ -56,6 +65,10 @@ export const articles = [
       'The restraint makes state legible. If everything is accented, nothing is.',
       'The publication keeps that rule in CSS variables so a future issue can choose its own punctuation color.'
     ],
+    notes: [
+      { label: 'rule', text: 'One accent color carries state, not decoration.' },
+      { label: 'token', text: 'The punctuation color is a single CSS variable on purpose.' },
+    ],
   },
   {
     slug: 'agents-reading-source',
@@ -69,6 +82,10 @@ export const articles = [
       'A publication can be both finished surface and reference object. A technical appendix can point to the files that matter, the choices made and the issues encountered.',
       'That is why Marginalia includes a technical appendix without interrupting the issue front.',
       'The goal is not to expose private process. The goal is to make the public source teach the public pattern.'
+    ],
+    notes: [
+      { label: 'appendix', text: 'Build notes are separated from the issue front so product reading stays uninterrupted.' },
+      { label: 'public', text: 'Only durable source lessons belong in public notes; private prompts do not.' },
     ],
   },
 ];

@@ -158,6 +158,8 @@ Takeaway: CLI uploads that keep files under `dist/static` should emit the comple
 - The same article index powers static routes, search results and bookmark labels.
 - Reading progress is isolated to one utility island, so article rendering remains static.
 - The publication works as content first; islands only improve navigation and retention.
+- The Opus refinement pass added server-rendered sidenotes from article records, which fixed the “publication with no marginalia” critique while keeping no-JS article reading intact.
+- Listing the current essay inside Recent pieces made the issue front and article index agree without duplicating route logic.
 
 ## Limits to preserve
 

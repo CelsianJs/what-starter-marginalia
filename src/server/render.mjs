@@ -31,16 +31,16 @@ function Layout({ route, assetPath }, children) {
   );
 }
 
-function ArticleRow({ article }) {
+function ArticleRow({ article, current = false }) {
   return A({ class: 'article-row', href: articlePath(article) },
-    h('span', { class: 'meta' }, article.category),
+    h('span', { class: 'meta' }, current ? `Current · ${article.category}` : article.category),
     h('span', {}, h('h3', {}, article.title), h('p', {}, article.dek)),
     h('span', { class: 'meta' }, `${article.minutes} min`),
   );
 }
 
 function Home() {
-  const [lead, ...rest] = articles;
+  const [lead] = articles;
   return h('div', {},
     h('section', { class: 'front' },
       h('article', { class: 'lead-article' },
@@ -56,7 +56,7 @@ function Home() {
     ),
     h('section', { class: 'section' },
       h('p', { class: 'label' }, 'Recent pieces'),
-      h('div', { class: 'article-list' }, rest.map((article) => h(ArticleRow, { article }))),
+      h('div', { class: 'article-list' }, articles.map((article, index) => h(ArticleRow, { article, current: index === 0 }))),
     ),
   );
 }
@@ -81,6 +81,9 @@ function Article({ article }) {
       h('p', { class: 'meta' }, `${article.author} · ${article.date} · ${article.minutes} min`),
       h('button', { type: 'button', class: 'bookmark-button', 'data-slug': article.slug, 'aria-pressed': 'false' }, 'Save to reading list'),
       h('p', {}, 'Bookmarks are stored locally in this browser only.'),
+      article.notes?.length ? h('div', { class: 'sidenotes', 'aria-label': 'Marginal notes' },
+        article.notes.map((note) => h('p', {}, h('span', {}, note.label), note.text)),
+      ) : null,
     ),
   );
 }
@@ -123,6 +126,8 @@ function Build() {
         h('li', {}, 'Lesson: server-rendered article pages use `h()` and `renderToString`; browser JSX stays in `src/client/main.jsx` so compiler-lowered DOM code is never imported by the Node renderer.'),
         h('li', {}, 'Lesson: search and bookmark islands use `mount()`, replacing fallback containers after JavaScript loads rather than preserving SSR nodes through hydration.'),
         h('li', {}, 'Lesson: storage access can throw in locked-down browser contexts, so bookmark reads/writes use safe wrappers with tab-local memory fallback.'),
+        h('li', {}, 'Refinement: article sidenotes are server-rendered from content records so the publication has real marginalia even with JavaScript disabled.'),
+        h('li', {}, 'Refinement: the featured essay also appears in Recent pieces with a Current marker, keeping the issue front and index in sync.'),
       ),
     ),
   );

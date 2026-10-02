@@ -31,7 +31,7 @@ export const articles = [
     notes: [
       { label: 'mark 01', text: 'The margin is product UI here: a visible seam that explains the editorial stance.' },
       { label: 'state', text: 'Progress and bookmarks remain local browser state, not engagement telemetry.' },
-      { label: 'boundary', text: 'The complete article renders before the reading tools mount.' },
+      { label: 'annotation', text: 'A finished page can still show where attention changed direction.' },
     ],
   },
   {

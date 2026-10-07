@@ -1,8 +1,12 @@
 # Design
 
+## Product-depth refinement — 2026-10-07
+
+Four complete editorial arguments replace the short sample stubs. Reading durations derive from body words at 220 words per minute. Author/date and the reading-list action appear before the body; related category reading closes each essay. The issue rail lists other pieces while retaining the newsprint, rule and red-punctuation identity.
+
 ## Source of truth
 - Status: Active
-- Last refreshed: 2026-10-01
+- Last refreshed: 2026-10-07
 - Primary product surfaces: Home, article index, category route, search route, article details, bookmarks, build reference, 404.
 - Evidence reviewed: existing What Framework starter conventions, server-rendering documentation and Vura static artifact conventions.
 

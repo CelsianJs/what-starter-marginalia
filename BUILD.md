@@ -1,5 +1,11 @@
 # How Marginalia was built
 
+## Product-depth patterns — 2026-10-07
+
+Article duration is derived once from content: `Math.max(1, Math.ceil(article.body.join(' ').trim().split(/\s+/).length / 220))`. This fixes the misleading 4–7 minute labels on three-paragraph stubs without padding content to satisfy a timer. Server-rendered bylines, related reading and sidenotes remain useful without JavaScript. The existing bookmark utility locates `.bookmark-button` anywhere on the page, so moving it before the essay did not require another island or new storage behavior. The original `.article-body p` rule initially enlarged byline metadata; a scoped `.byline` rule repairs hierarchy. Product-depth checks validate every duration; browser checks preserve search, saved lists and denied-storage behavior.
+
+Verification: `npm test` runs content/model regressions, production artifact checks, contextual browser flows, desktop/mobile screenshots and the original smoke suite. Screenshot proof is under `.screenshots/`; no external services are required.
+
 Marginalia is a static publication starter. Article pages are generated at build time, then client-mounted islands add search, bookmarks and reading progress.
 
 The important boundary: static article HTML stays useful without JavaScript. `mount()` replaces only the island host regions when the browser bundle loads; it is not SSR-preserving hydration.

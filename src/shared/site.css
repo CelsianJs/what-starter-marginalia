@@ -137,6 +137,12 @@ p { font-size: clamp(1.05rem, 1.35vw, 1.22rem); line-height: 1.72; color: var(--
 }
 .article-body { max-width: 760px; }
 .article-body p { color: var(--ink); font-size: clamp(1.2rem, 1.8vw, 1.48rem); }
+.article-body .byline, .article-body .meta { font-size: .78rem; color: var(--muted); }
+.article-body > .label { font-size: .78rem; color: var(--red); }
+.related-reading { margin-top: 3rem; border-top: 2px solid var(--rule); padding-top: 1.5rem; }
+.related-reading h2 { font-size: 2rem; margin-bottom: 1rem; }
+.related-reading .article-row { grid-template-columns: 1fr; }
+.bookmark-button { min-height: 44px; }
 .article-body > p:nth-of-type(2) {
   font-size: clamp(1.38rem, 2.3vw, 1.9rem);
   line-height: 1.45;

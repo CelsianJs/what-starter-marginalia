@@ -2,11 +2,11 @@
 
 ## Product-depth refinement — 2026-10-07
 
-Four complete editorial arguments replace the short sample stubs. Reading durations derive from body words at 220 words per minute. Author/date and the reading-list action appear before the body; related category reading closes each essay. The issue rail lists other pieces while retaining the newsprint, rule and red-punctuation identity.
+Four complete editorial arguments replace the short sample stubs. Reading durations derive from body words at 220 words per minute. Author/date and the reading-list action appear before the body; related category reading closes each essay. The issue rail lists other pieces while retaining the notebook and red-punctuation identity without oversized newsprint typography.
 
 ## Source of truth
 - Status: Active
-- Last refreshed: 2026-10-07
+- Last refreshed: 2026-10-08
 - Primary product surfaces: Home, article index, category route, search route, article details, bookmarks, build reference, 404.
 - Evidence reviewed: existing What Framework starter conventions, server-rendering documentation and Vura static artifact conventions.
 
@@ -31,15 +31,15 @@ Four complete editorial arguments replace the short sample stubs. Reading durati
 - Content hierarchy: issue-led homepage, index/category lists, long-form article detail pages, reading tools.
 
 ## Design principles
-- Principle 1: The page should feel printed before it feels like software.
+- Principle 1: A readable contemporary notebook, with essay and index ahead of display typography.
 - Principle 2: Client interactivity supports reading, not engagement theater.
 - Tradeoffs: local search/bookmarks are preferred over remote services; the aesthetic is stark and text-led.
 
 ## Visual language
 - Color: newsprint black, paper white, muted gray, one red punctuation color.
-- Typography: strong serif-like headline stack via local system fallbacks; narrow sans/mono for labels.
-- Spacing/layout rhythm: broadsheet columns, thick top rules, dense index rows.
-- Shape/radius/elevation: almost no radius, no shadows, rule lines over cards.
+- Typography: Avenir Next / Segoe UI Variable / Segoe UI / sans-serif; 16px body at 1.6 line height, 14px chrome, bounded 48px desktop / 32px mobile headings and compact 28px masthead.
+- Spacing/layout rhythm: 8px rhythm, light hairlines, two-column issue lead, flat index rows and readable article measure.
+- Shape/radius/elevation: 6px controls, no shadows, hairlines rather than repeated cards.
 - Motion: subtle route/read progress transitions, disabled under reduced motion.
 - Imagery/iconography: typographic marks and section numbers only; no remote assets.
 

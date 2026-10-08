@@ -1,5 +1,11 @@
 # How Marginalia was built
 
+## Contemporary interface baseline — 2026-10-08
+
+The stylesheet is consolidated around a shared local sans-serif stack, explicit 16px body and 14px control typography, 44px minimum button/input/navigation targets and an 8px spacing rhythm. Headings stop at 48px on desktop and 32px on mobile across product, detail and build routes. Source content, client state, routes, local persistence and file-download semantics are unchanged. Quiet borders replace decorative backgrounds, heavy outlines and offset shadows; the original content objects remain the focal point.
+
+Visual verification covers 1440×1000 and 390×844 primary, detail, interactive and build surfaces, horizontal geometry, focus, source-native controls and no-JavaScript content. `npm test` runs content regressions, production build checks, existing browser/smoke flows and then the shared typography/geometry contract through `npm run test:style`. The existing CI `npm test` step runs this mandatory gate too; no optional or skipped style check is used. To rerun style checks independently, run `npm run build` followed by `npm run test:style`. No new dependencies or external font requests are needed.
+
 ## Product-depth patterns — 2026-10-07
 
 Article duration is derived once from content: `Math.max(1, Math.ceil(article.body.join(' ').trim().split(/\s+/).length / 220))`. This fixes the misleading 4–7 minute labels on three-paragraph stubs without padding content to satisfy a timer. Server-rendered bylines, related reading and sidenotes remain useful without JavaScript. The existing bookmark utility locates `.bookmark-button` anywhere on the page, so moving it before the essay did not require another island or new storage behavior. The original `.article-body p` rule initially enlarged byline metadata; a scoped `.byline` rule repairs hierarchy. Product-depth checks validate every duration; browser checks preserve search, saved lists and denied-storage behavior.

@@ -22,7 +22,7 @@ function Layout({ route, assetPath }, children) {
     h('header', { class: 'masthead page' },
       h('div', { class: 'topline' }, h('span', {}, 'Vol. 01 / local edition'), h('span', {}, 'Read at your own pace.')),
       A({ class: 'brand', href: '/' }, 'Marginalia', h('span', { class: 'red' }, '.')),
-      h('nav', { class: 'nav', 'aria-label': 'Primary' }, nav.map(([href, label]) => A({ href, 'aria-current': href === route.path ? 'page' : undefined }, label))),
+      h('nav', { class: 'nav', 'aria-label': 'Primary' }, nav.map(([href, label]) => A({ href, 'aria-current': href === route.path ? 'page' : href === '/articles' && route.kind === 'article' ? 'location' : undefined }, label))),
     ),
     h('main', { id: 'content', class: 'page' }, ...children),
     h('footer', { class: 'footer page' }, h('span', {}, 'Marginalia independent notebook'), h('span', {}, 'Static articles · local reading list')),
